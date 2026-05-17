@@ -206,6 +206,64 @@ A complete real-time chat system for seamless communication.
 
 ---
 
+**clean, improved “Role System” section*
+
+---
+
+## 🧠 Role System
+
+### 👤 User
+
+Any user who signs up automatically becomes a **User**.
+Users can:
+
+* Browse products
+* Add items to cart
+* Place orders
+* Make payments
+* View order history
+* Update their profile
+
+---
+
+### 🧪 Demo Admin (Read-Only)
+
+A **demo admin account** is provided for testing and demonstration purposes.
+This role can:
+
+* Access the admin dashboard
+* View all admin features
+* Explore analytics and data
+
+❌ Restrictions:
+
+* Cannot create data
+* Cannot update data
+* Cannot delete data
+
+---
+
+### 🛠 Real Admin
+
+Real admin accounts are **manually created in the database**.
+Admins have full system control, including:
+
+* Product management (Create / Update / Delete)
+* Order management and status updates
+* User management
+* Payment monitoring
+* System-wide configuration
+
+---
+
+### 🔐 Role-Based Access Control (RBAC)
+
+* System automatically detects user role after login
+* Frontend routes are protected based on role
+* Backend APIs validate permissions before executing actions
+* Unauthorized access is blocked at both frontend and backend
+
+
 ## 📈 Future Improvements
 
 * Stripe or international payment integration
