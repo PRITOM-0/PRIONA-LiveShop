@@ -1,14 +1,21 @@
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MainLayout from "./layout/MainLayout";
+import { Home } from "lucide-react";
 
-import './App.css'
-import { Button } from './components/ui/button'
-function App() {
-  
+const App = () => {
   return (
-    <>
-      <div className='text-7xl text-center  mt-20'>Welcome to PRIONA</div>
-      <Button>Click me</Button>
-    </>
-  )
-}
+    <div className="font-bf">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<Home/>}></Route>
+            
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+};
 
-export default App
+export default App;
