@@ -4,14 +4,14 @@ import { Search, Heart, BaggageClaim, CircleUserRound } from "lucide-react";
 const Navbar = () => {
   return (
     <>
-      <div className="w-full sm:w-[80%] md:w-[70%] lg:w-[60%] bg-white h-8 md:h-12 lg:h-14 mx-auto flex justify-between items-end text-black text-[6px] sm:text-md md:text-[8px] lg:text-[8px] xl:text-sm font-secondary font-bold">
-        <div className=" w-[30%] md:w-[20%] h-full flex justify-center text-sm sm:text-md md:text-xl items-center">
+      <div className="w-full sm:w-[90%] md:w-[90%] lg:w-[60%] bg-white h-10 md:h-12 lg:h-14 mx-auto flex justify-between items-end text-black text-[6px] sm:text-md md:text-[8px] lg:text-[8px] xl:text-sm font-secondary">
+        <div className=" w-[30%] md:w-[20%] h-full flex justify-start pl-10 text-sm sm:text-md md:text-2xl font-bold items-center">
           PRIONA
         </div>
         <div className=" w-[45%] md:w-[25%] h-full flex items-center">
           <div className="w-full flex bg-black/10 px-1 md:px-3 py-0.5 rounded-xs justify-between items-center md:gap-x-1">
             <input
-              className=" py-0.5 w-[90%] focus:outline-none "
+              className=" py-1 w-[90%] focus:outline-none text-[6px] sm:text-md md:text-[8px] lg:text-[8px] xl:text-[10px] "
               type="text"
               placeholder="What are you looking for ?"
             />
@@ -34,7 +34,7 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-        <div className=" w-[25%] md:w-[15%] h-full flex items-center justify-center">
+        <div className=" w-[25%] md:w-[15%] h-full flex items-center justify-end pr-10">
           <div className="flex gap-x-3 md:gap-x-4">
             <Heart className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 lg:w-5 lg:h-5" />
             <BaggageClaim className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 lg:w-5 lg:h-5" />

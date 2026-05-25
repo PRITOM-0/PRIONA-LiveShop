@@ -2,6 +2,8 @@ import Topbar from "../components/Topbar";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+import { Outlet } from "react-router-dom";
+
 const MainLayout = () => {
   return (
     <>
@@ -9,7 +11,9 @@ const MainLayout = () => {
         <Topbar />
         <Navbar />
       </header>
-      <main></main>
+      <main className="w-full md:w-[90%] lg:w-[80%] mx-auto">
+        <Outlet />
+      </main>
       <footer>
         <Footer />
       </footer>

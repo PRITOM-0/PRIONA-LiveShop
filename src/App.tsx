@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
-import { Home } from "lucide-react";
+import HomePage from "./pages/HomePage";
 
 const App = () => {
   return (
@@ -9,7 +9,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout />}>
-            <Route index element={<Home/>}></Route>
+            <Route index element={<HomePage/>}></Route>
             
           </Route>
         </Routes>
