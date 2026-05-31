@@ -52,7 +52,7 @@ const HeroSection = () => {
   );
 
   return (
-    <section className="w-full min-h-[50vh]">
+    <section className="w-full">
       <div className="max-w-7xl mx-auto px-4 py-6">
         <div className="flex flex-col md:flex-row gap-4">
           {/* Categories */}
@@ -86,7 +86,7 @@ const HeroSection = () => {
               <CarouselContent>
                 {slides.map((slide) => (
                   <CarouselItem key={slide.id}>
-                    <div className="relative h-64 md:h-96">
+                    <div className="relative h-48 md:h-96">
                       <img
                         src={slide.image}
                         alt={slide.title}
