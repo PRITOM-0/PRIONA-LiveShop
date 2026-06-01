@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
-import { Search, Heart, BaggageClaim, CircleUserRound,ListCollapse } from "lucide-react";
+import { Search, Heart, BaggageClaim, CircleUserRound } from "lucide-react";
 import { Button } from "./ui/button";
+import { SidebarTrigger } from "./ui/sidebar";
 
 const Navbar = () => {
   return (
     <>
       <div className="w-full md:px-40 bg-white h-16 shadow-md md:h-12 lg:h-14 mx-auto flex justify-between items-center text-black font-secondary">
         <div className=" w-[45%] md:w-[25%] h-full pl-2 flex justify-around md:justify-start text-3xl sm:text-md md:text-4xl font-bold items-center gap-2">
-          <div className="md:hidden text-black border rounded-md p-1.5 border-black shadow-md"><ListCollapse size={25} /></div>
+           <SidebarTrigger className="md:hidden"/>
+       
           <div className="">PRIONA</div>
       
         </div>
