@@ -4,6 +4,9 @@ import MainLayout from "./layout/MainLayout";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
 
+import LoginPage from "./pages/LoginPage";
+import SignInPage from "./pages/SignInPage";
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -11,6 +14,8 @@ const App = () => {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomePage />}></Route>
           <Route path="/product" element={<ProductPage />}></Route>
+          <Route path="/login" element={<LoginPage />}></Route>
+          <Route path="/signin" element={<SignInPage />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

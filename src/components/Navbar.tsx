@@ -10,8 +10,9 @@ const Navbar = () => {
         <div className=" w-[45%] md:w-[25%] h-full pl-2 flex justify-around md:justify-start text-3xl sm:text-md md:text-4xl font-bold items-center gap-2">
            <SidebarTrigger className="md:hidden"/>
        
-          <div className="">PRIONA</div>
-      
+          <Link to="/" className="text-2xl font-bold">
+            PRIONA
+          </Link>
         </div>
         <div className=" hidden md:w-[30%] h-full md:flex items-center">
           <div className="w-full flex items-center bg-white border border-red-500 rounded-xs overflow-hidden">
@@ -51,9 +52,11 @@ const Navbar = () => {
             <Heart className="w-6 h-6" />
             <BaggageClaim className="w-6 h-6 " />
             <CircleUserRound className="w-6 h-6 " />
-            <Button className=" hover:bg-red-500 text-white py-4 px-3 flex items-center justify-center shadow-md rounded-sm transition">
-              Log In
+            <Link to="/login">
+              <Button className=" hover:bg-red-500 text-white py-4 px-3 flex items-center justify-center shadow-md rounded-sm transition">
+              Sign In
             </Button>
+            </Link>
           </div>
         </div>
       </div>

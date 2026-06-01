@@ -25,7 +25,7 @@ export function AppSidebar() {
     <Sidebar collapsible="icon" className=" border-r bg-white">
       {/* Header */}
       <SidebarHeader className="p-4 text-2xl font-bold text-red-500">
-        PRIONA
+        <Link to="/">PRIONA</Link>
       </SidebarHeader>
 
       {/* Content */}
@@ -55,10 +55,16 @@ export function AppSidebar() {
             </Link>
 
             <Link
-              to="/signup"
+              to="/signin"
               className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-black hover:bg-red-50 transition"
             >
-              <UserPlus size={18} /> Sign Up
+              <UserPlus size={18} /> Sign In
+            </Link>
+            <Link
+              to="/login"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-black hover:bg-red-50 transition"
+            >
+              <UserPlus size={18} /> Log In
             </Link>
           </div>
         </SidebarGroup>
