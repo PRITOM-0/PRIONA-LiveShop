@@ -1,124 +1,111 @@
 import { useState } from "react";
-import { Star, Heart, ShoppingCart, Car } from "lucide-react";
-
-const productImages = {
-  Black: [
-    "https://cdn-img.oraimo.com/GH/product/2025/01/09/watch-5-lite-osw-804.png",
-    "https://cdn-img.oraimo.com/GH/product/2025/01/09/watch-5-lite-osw-804.png",
-    "https://cdn-img.oraimo.com/GH/product/2025/01/09/watch-5-lite-osw-804.png",
-    "https://cdn-img.oraimo.com/GH/product/2025/01/09/watch-5-lite-osw-804.png",
-  ],
-  Red: [
-    "https://cdn-img.oraimo.com/GH/product/2025/01/09/watch-5-lite-osw-804.png",
-    "https://cdn-img.oraimo.com/GH/product/2025/01/09/watch-5-lite-osw-804.png",
-  ],
-  Blue: [
-    "https://cdn-img.oraimo.com/GH/product/2025/01/09/watch-5-lite-osw-804.png",
-  ],
-};
-
-const colors = [
-  { name: "Black", code: "#000000" },
-  { name: "Red", code: "#ef4444" },
-  { name: "Blue", code: "#3b82f6" },
-];
-
+import { Star, Heart, ShoppingCart } from "lucide-react";
+import { useParams } from "react-router-dom";
+import { allProducts } from "@/Data/data";
+import RelatedProducts from "@/components/RelatedProducts";
 const ProductPage = () => {
+  const { id } = useParams();
+  const product = allProducts.find((p) => p.id === parseInt(id!));
+
   const [color, setColor] = useState("Black");
-  const [selectedImage, setSelectedImage] = useState(productImages["Black"][0]);
   const [qty, setQty] = useState(1);
   const [size, setSize] = useState("M");
 
-  const images = productImages[color];
+  const colors = [
+    { name: "Black", code: "#000000" },
+    { name: "Red", code: "#ef4444" },
+    { name: "Blue", code: "#3b82f6" },
+  ];
 
   return (
-    <div className="w-full max-w-7xl mx-auto p-4">
-      {/* 🔥 MAIN GRID */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-        {/* 🟡 THUMBNAILS */}
+    <div className="w-full max-w-7xl mx-auto px-4 py-6">
+      {/* MAIN GRID */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+        
+        {/* THUMBNAILS */}
         <div className="md:col-span-2 flex md:flex-col gap-3">
-          {images.map((img, i) => (
-            <img
+          {Array.from({ length: 3 }).map((_, i) => (
+            <div
               key={i}
-              src={img}
-              onClick={() => setSelectedImage(img)}
-              className={`w-20 h-20 object-cover rounded-lg border cursor-pointer ${
-                selectedImage === img ? "border-red-500" : "border-gray-200"
-              }`}
-            />
+              className="w-20 h-20 rounded-xl overflow-hidden border hover:border-red-500 transition cursor-pointer"
+            >
+              <img
+                src={product?.img}
+                className="w-full h-full object-cover hover:scale-105 transition"
+              />
+            </div>
           ))}
         </div>
 
-        {/* 🟢 MAIN IMAGE */}
+        {/* MAIN IMAGE */}
         <div className="md:col-span-5">
-          <div className="relative bg-gray-100 rounded-xl overflow-hidden">
+          <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border">
             <img
-              src={selectedImage}
-              className="w-full h-[350px] object-cover"
+              src={product?.img}
+              className="w-full h-[420px] object-cover hover:scale-105 transition duration-300"
             />
 
-            {/* Discount */}
-            <span className="absolute top-3 left-3 bg-red-500 text-white text-xs px-2 py-1 rounded">
-              -50%
+            <span className="absolute top-4 left-4 bg-red-500 text-white text-xs px-3 py-1 rounded-full shadow">
+              -{product?.discount}%
             </span>
 
-            {/* Wishlist */}
-            <button className="absolute top-3 right-3 bg-white p-2 rounded-full shadow hover:bg-red-500 hover:text-white transition">
+            <button className="absolute top-4 right-4 bg-white p-2 rounded-full shadow hover:bg-red-500 hover:text-white transition">
               <Heart size={16} />
             </button>
 
-            {/* Category */}
-            <span className="absolute bottom-3 left-3 bg-black/70 text-white text-xs px-2 py-1 rounded">
-              Electronics
+            <span className="absolute bottom-4 left-4 bg-black/80 text-white text-xs px-3 py-1 rounded-full">
+              {product?.category}
             </span>
           </div>
         </div>
 
-        {/* 🔵 DETAILS */}
-        <div className="md:col-span-5 space-y-4">
-          {/* Title */}
-          <h1 className="text-lg md:text-xl font-semibold text-gray-800">
+        {/* DETAILS */}
+        <div className="md:col-span-5 space-y-6">
+          
+          {/* TITLE */}
+          <h1 className="text-xl md:text-2xl font-semibold text-gray-900 leading-snug">
             Wireless Bluetooth Headphones
           </h1>
 
-          {/* Rating */}
-          <div className="flex items-center">
+          {/* RATING */}
+          <div className="flex items-center gap-1">
             {[...Array(5)].map((_, i) => (
-              <Star
-                key={i}
-                size={14}
-                className="text-yellow-400 fill-yellow-400"
-              />
+              <Star key={i} size={16} className="text-yellow-400 fill-yellow-400" />
             ))}
-            <span className="text-xs text-gray-500 ml-1">(120 reviews)</span>
+            <span className="text-xs text-gray-500 ml-2">(120 reviews)</span>
           </div>
 
-          {/* Price */}
-          <div className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-red-500">$19.99</span>
-            <span className="text-sm line-through text-gray-400">$39.99</span>
+          {/* PRICE */}
+          <div className="flex items-end gap-3">
+            <span className="text-3xl font-bold text-red-500">
+              {product?.price} tk
+            </span>
+            <span className="text-sm line-through text-gray-400">
+              {product?.originalPrice} tk
+            </span>
           </div>
 
-          {/* Stock */}
-          <p className="text-green-600 text-sm font-medium">In Stock</p>
+          {/* STOCK */}
+          <p className="text-green-600 font-medium text-sm">In Stock</p>
 
-          {/* Category */}
-          <p className="text-xs text-gray-500">
-            Category: <span className="font-medium">Electronics</span>
+          {/* CATEGORY */}
+          <p className="text-sm text-gray-600">
+            Category:{" "}
+            <span className="font-semibold text-black">{product?.category}</span>
           </p>
 
-          {/* Size */}
+          {/* SIZE */}
           <div>
-            <p className="text-sm mb-1">Size</p>
+            <p className="text-sm font-medium mb-2">Size</p>
             <div className="flex gap-2">
               {["S", "M", "L", "XL"].map((s) => (
                 <button
                   key={s}
                   onClick={() => setSize(s)}
-                  className={`px-3 py-1 text-sm border rounded-lg ${
+                  className={`px-4 py-1.5 rounded-lg border text-sm transition ${
                     size === s
-                      ? "bg-red-500 text-white border-red-500"
-                      : "border-gray-300"
+                      ? "bg-red-500 text-white border-red-500 shadow"
+                      : "border-gray-300 hover:border-red-500"
                   }`}
                 >
                   {s}
@@ -127,19 +114,15 @@ const ProductPage = () => {
             </div>
           </div>
 
-          {/* 🎨 COLOR */}
+          {/* COLOR */}
           <div>
-            <p className="text-sm mb-1">Color</p>
-
+            <p className="text-sm font-medium mb-2">Color</p>
             <div className="flex gap-3">
               {colors.map((c) => (
                 <button
                   key={c.name}
-                  onClick={() => {
-                    setColor(c.name);
-                    setSelectedImage(productImages[c.name][0]);
-                  }}
-                  className={`w-7 h-7 rounded-full border-2 ${
+                  onClick={() => setColor(c.name)}
+                  className={`w-8 h-8 rounded-full border-2 transition ${
                     color === c.name
                       ? "border-red-500 scale-110"
                       : "border-gray-300"
@@ -148,49 +131,50 @@ const ProductPage = () => {
                 />
               ))}
             </div>
-
             <p className="text-xs text-gray-500 mt-1">
-              Selected: <span className="font-medium">{color}</span>
+              Selected: <span className="font-medium text-black">{color}</span>
             </p>
           </div>
 
-          {/* Quantity */}
-          <div className="flex items-center gap-3">
+          {/* QUANTITY */}
+          <div className="flex items-center gap-4">
             <button
               onClick={() => setQty(qty > 1 ? qty - 1 : 1)}
-              className="px-3 py-1 border rounded"
+              className="w-10 h-10 border rounded-lg hover:bg-red-50 text-lg"
             >
               -
             </button>
-            <span className="text-sm">{qty}</span>
+
+            <span className="text-lg font-medium">{qty}</span>
+
             <button
               onClick={() => setQty(qty + 1)}
-              className="px-3 py-1 border rounded"
+              className="w-10 h-10 border rounded-lg hover:bg-red-50 text-lg"
             >
               +
             </button>
           </div>
 
-          {/* Buttons */}
-          <div className="flex gap-3">
-            <button className="flex-1 flex items-center justify-center gap-2 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition">
-              <ShoppingCart size={16} />
+          {/* BUTTONS */}
+          <div className="flex gap-3 pt-2">
+            <button className="flex-1 flex items-center justify-center gap-2 bg-red-500 hover:bg-red-600 text-white py-3 rounded-xl shadow-md transition">
+              <ShoppingCart size={18} />
               Add to Cart
             </button>
 
-            <button className="border px-4 rounded-lg hover:bg-gray-100">
+            <button className="w-12 h-12 flex items-center justify-center border rounded-xl hover:bg-red-50 transition">
               <Heart size={18} />
             </button>
           </div>
         </div>
       </div>
 
-      {/* 🔥 RELATED */}
-      <div className="mt-12">
-        <h2 className="text-lg font-semibold mb-4">Related Products</h2>
+      {/* RELATED */}
+      <div className="mt-14">
+        <h2 className="text-xl font-semibold mb-4">Related Products</h2>
 
-        <div className="w-full h-40 bg-black rounded-lg">
-          <div />
+        <div className=" ">
+         <RelatedProducts/>
         </div>
       </div>
     </div>

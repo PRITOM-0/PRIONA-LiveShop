@@ -8,7 +8,7 @@ const SignInPage = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   return (
-    <div className="relative flex items-center justify-center px-4 py-5 bg-white overflow-hidden">
+    <div className="relative flex items-center justify-center px-4 py-5  overflow-hidden">
       
       {/* Smart Background Glow Effect */}
       <div className="absolute top-1/4 right-1/4 w-[350px] h-[350px] bg-red-500/10 rounded-full blur-[80px] pointer-events-none" />

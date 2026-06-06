@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 import { Button } from "./ui/button";
+import {allProducts} from "@/Data/data"
 
 const ProductSection = () => {
-  const products = Array.from({ length: 60 });
+  const products = allProducts; // Replace with your actual product data
 
   const [itemsPerPage, setItemsPerPage] = useState(18); // default lg
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,7 +19,7 @@ const ProductSection = () => {
       } else if (width >= 768) {
         setItemsPerPage(15); // 5 x 3 rows
       } else {
-        setItemsPerPage(9); // 3 x 3 rows
+        setItemsPerPage(8); // 4 x 2 rows
       }
     };
 
@@ -46,9 +47,9 @@ const ProductSection = () => {
       </div>
       <div className="max-w-7xl mx-auto px-4">
         {/* ✅ GRID */}
-        <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-6 gap-4">
-          {currentProducts.map((_, i) => (
-            <ProductCard key={i} />
+        <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-6 gap-x-3 gap-y-1 md:gap-4">
+          {currentProducts.map((product, i) => (
+            <ProductCard key={i} product={product} />
           ))}
         </div>
 

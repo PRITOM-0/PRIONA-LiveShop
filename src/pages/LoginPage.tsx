@@ -98,7 +98,7 @@ const LoginPage = () => {
             type="submit"
             className="w-full mt-2 bg-red-500 hover:bg-black text-white py-3 rounded-xl font-semibold shadow-lg shadow-red-500/20 hover:shadow-black/10 flex items-center justify-center gap-2 group transition-all duration-300 active:scale-[0.98]"
           >
-            Sign In
+            Log In
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </button>
 
@@ -123,7 +123,7 @@ const LoginPage = () => {
         {/* Card Footer */}
         <p className="text-center text-sm text-neutral-600 mt-6 font-medium">
           Don’t have an account?{" "}
-          <Link to="/signin">
+          <Link to="/signup">
             <button type="button" className="text-red-500 font-semibold hover:text-black hover:underline underline-offset-4 transition-colors">
               Sign up free
             </button>

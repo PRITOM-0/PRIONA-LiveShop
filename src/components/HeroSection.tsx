@@ -7,41 +7,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-
-const categories = [
-  "Electronics",
-  "Fashion",
-  "Home & Living",
-  "Beauty",
-  "Sports",
-  "Books",
-  "Toys",
-  "Automotive",
-];
-
-const slides = [
-  {
-    id: 1,
-    title: "Big Sale on Electronics",
-    desc: "Up to 50% off on latest gadgets",
-    image:
-      "https://img.magnific.com/free-vector/black-friday-wide-orange-sale-grunge-banner_1017-34783.jpg?semt=ais_hybrid&w=740&q=80",
-  },
-  {
-    id: 2,
-    title: "New Fashion Arrivals",
-    desc: "Trendy styles for everyone",
-    image:
-      "https://img.freepik.com/free-vector/black-friday-sale-attractive-modern-banner-design_1017-34753.jpg?semt=ais_hybrid&w=740&q=80",
-  },
-  {
-    id: 3,
-    title: "Home Essentials",
-    desc: "Upgrade your living space",
-    image:
-      "https://static.vecteezy.com/system/resources/previews/033/324/240/non_2x/horizontal-sale-banner-web-banner-with-black-stripes-on-dark-background-with-silver-letters-glitter-and-confetti-template-design-for-holidays-black-friday-sale-special-offer-shopping-poster-vector.jpg",
-  },
-];
+import {slides} from "@/Data/data"
+import {categories} from "@/Data/data"
 
 const HeroSection = () => {
   const plugin = React.useRef(
@@ -62,9 +29,9 @@ const HeroSection = () => {
               {categories.map((cat, i) => (
                 <li
                   key={i}
-                  className="text-gray-600 hover:text-black cursor-pointer transition"
+                  className="text-gray-600 hover:text-black cursor-pointer transition flex gap-2"
                 >
-                  {cat}
+                 <cat.icon size={20} className="text-red-500"/> {cat.title}
                 </li>
               ))}
             </ul>
@@ -88,7 +55,8 @@ const HeroSection = () => {
                   <CarouselItem key={slide.id}>
                     <div className="relative h-48 md:h-96">
                       <img
-                        src={slide.image}
+                      loading="lazy"
+                        src={`${slide.image}?w=300&h=300&fit=crop&auto=format&q=60`}
                         alt={slide.title}
                         className="w-full h-full object-cover"
                       />

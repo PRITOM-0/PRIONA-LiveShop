@@ -1,4 +1,7 @@
-import FlashSellSection from "@/components/FlashSellSection";
+
+import { lazy, Suspense } from "react";
+const FlashSellSection = lazy(() => import("@/components/FlashSellSection"));
+
 import HeroSection from "../components/HeroSection";
 import CatagorySection from "@/components/CategorySection";
 import BestSellingSection from "@/components/BestSellingSection";
@@ -11,7 +14,9 @@ const HomePage = () => {
     <>
       <SearchBar />
       <HeroSection />
-      <FlashSellSection />
+      <Suspense  fallback={<div>Loading...</div>}>
+        <FlashSellSection />
+      </Suspense>
       <hr />
       <CatagorySection />
       <hr />

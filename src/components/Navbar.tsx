@@ -42,7 +42,7 @@ const Navbar = () => {
             <Link to="/" className="px-1 border-b-2 border-white hover:border-b-2 hover:border-black transition-all duration-400">
               About
             </Link>
-            <Link to="/" className="px-1 border-b-2 border-white hover:border-b-2 hover:border-black transition-all duration-400">
+            <Link to="/signup" className="px-1 border-b-2 border-white hover:border-b-2 hover:border-black transition-all duration-400">
               Sign Up
             </Link>
           </div>
@@ -54,7 +54,7 @@ const Navbar = () => {
             <CircleUserRound className="w-6 h-6 " />
             <Link to="/login">
               <Button className=" hover:bg-red-500 text-white py-4 px-3 flex items-center justify-center shadow-md rounded-sm transition">
-              Sign In
+              Log In
             </Button>
             </Link>
           </div>

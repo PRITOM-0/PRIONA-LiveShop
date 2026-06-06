@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const BoostProductsection = () => {
-  const targetDate = new Date("2026-06-01T00:00:00");
+  const targetDate = new Date("2026-09-01T00:00:00");
 
   const getTimeLeft = () => {
     const diff = targetDate - new Date();

@@ -1,14 +1,3 @@
-import * as React from "react";
-import {
-  Laptop,
-  Shirt,
-  Home,
-  Heart,
-  Dumbbell,
-  Book,
-  ToyBrick,
-  Car,
-} from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -18,18 +7,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+ 
 
 // ✅ Category Data
-const categories = [
-  { name: "Electronics", icon: Laptop },
-  { name: "Fashion", icon: Shirt },
-  { name: "Home", icon: Home },
-  { name: "Beauty", icon: Heart },
-  { name: "Sports", icon: Dumbbell },
-  { name: "Books", icon: Book },
-  { name: "Toys", icon: ToyBrick },
-  { name: "Automotive", icon: Car },
-];
+ import {categories} from "@/Data/data"
 
 const CategorySection = () => {
   return (
@@ -76,7 +57,7 @@ const CategorySection = () => {
 
                       {/* Name */}
                       <span className="text-sm font-medium text-gray-700 text-center transition group-hover:text-white">
-                        {cat.name}
+                        {cat.title}
                       </span>
                     </CardContent>
                   </Card>

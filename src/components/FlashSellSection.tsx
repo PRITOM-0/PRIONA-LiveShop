@@ -10,6 +10,7 @@ import {
 import ProductCard from "./ProductCard";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { flashSaleProducts } from "@/Data/data";
 
 const TimeBox = ({ value, label }) => (
   <div className="flex flex-col items-center">
@@ -95,12 +96,12 @@ const FlashSellSection = () => {
           className="w-full relative"
         >
           <CarouselContent className="-ml-2">
-            {Array.from({ length: 10 }).map((_, index) => (
+            {flashSaleProducts.map((product, index) => (
               <CarouselItem
                 key={index}
                 className="pl-2 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5"
               >
-                <ProductCard />
+                <ProductCard product={product} />
               </CarouselItem>
             ))}
           </CarouselContent>
