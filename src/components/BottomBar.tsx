@@ -1,4 +1,4 @@
-import React from "react";
+// React import removed (JSX runtime automatic)
 import { Home, ShoppingBag, ShoppingCart, User } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 

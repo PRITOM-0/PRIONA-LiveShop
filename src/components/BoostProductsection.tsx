@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const BoostProductsection = () => {
   const targetDate = new Date("2026-09-01T00:00:00");
 
   const getTimeLeft = () => {
-    const diff = targetDate - new Date();
+    const diff = targetDate.getTime() - new Date().getTime();
 
     if (diff <= 0) return { d: 0, h: 0, m: 0, s: 0 };
 
