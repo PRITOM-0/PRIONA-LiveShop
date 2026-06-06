@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { User, Mail, Lock, Eye, EyeOff, Sparkles } from "lucide-react";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";

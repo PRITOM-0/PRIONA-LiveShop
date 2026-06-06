@@ -1,4 +1,4 @@
-import React from "react";
+// React import removed (JSX runtime automatic)
 import { Truck, Clock, RefreshCcw } from "lucide-react";
 
 const services = [

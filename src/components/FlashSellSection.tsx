@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useEffect, useState, useRef } from "react";
 import AutoScroll from "embla-carousel-auto-scroll";
 import {
   Carousel,
@@ -8,11 +8,10 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import ProductCard from "./ProductCard";
-import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { flashSaleProducts } from "@/Data/data";
 
-const TimeBox = ({ value, label }) => (
+const TimeBox = ({ value, label }: { value: number; label: string }) => (
   <div className="flex flex-col items-center">
     <div className="bg-black text-white px-3 py-1.5 rounded-md text-base font-semibold min-w-[40px] text-center">
       {String(value).padStart(2, "0")}
@@ -51,7 +50,7 @@ const FlashSellSection = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const autoScroll = React.useRef(
+  const autoScroll = useRef(
     AutoScroll({
       speed: 1,
       stopOnInteraction: true, // pause when user clicks
