@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Search, Heart, BaggageClaim, CircleUserRound } from "lucide-react";
+import { Search, Heart, CircleUserRound, ShoppingCart } from "lucide-react";
 import { Button } from "./ui/button";
 import { SidebarTrigger } from "./ui/sidebar";
 
@@ -49,9 +49,17 @@ const Navbar = () => {
         </div>
         <div className=" w-[50%] md:w-[15%] h-full flex items-center justify-end pr-5 md:pr-2">
           <div className="flex gap-x-3 md:gap-x-4 items-center">
-            <Heart className="w-6 h-6" />
-            <BaggageClaim className="w-6 h-6 " />
-            <CircleUserRound className="w-6 h-6 " />
+            <Link to="/cart" className="relative">
+              <Heart className="w-6 h-6" />
+              <div className="absolute -top-2 -right-3 p-0.5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">10</div>
+            </Link>
+            <Link to="/cart" className="relative">
+              <ShoppingCart className="w-6 h-6" />
+              <div className="absolute -top-2 -right-3 p-0.5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">10</div>
+            </Link>
+            <Link to="/profile">
+              <CircleUserRound className="w-6 h-6" />
+            </Link>
             <Link to="/login">
               <Button className=" hover:bg-red-500 text-white py-4 px-3 flex items-center justify-center shadow-md rounded-sm transition">
               Log In

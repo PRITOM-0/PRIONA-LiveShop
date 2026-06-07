@@ -64,7 +64,7 @@ const ProductPage = () => {
           
           {/* TITLE */}
           <h1 className="text-xl md:text-2xl font-semibold text-gray-900 leading-snug">
-            Wireless Bluetooth Headphones
+            {product?.title}
           </h1>
 
           {/* RATING */}
