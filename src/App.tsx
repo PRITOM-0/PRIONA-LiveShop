@@ -1,23 +1,37 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import MainLayout from "./layout/MainLayout";
-import HomePage from "./pages/HomePage";
-import ProductPage from "./pages/ProductPage";
 
-import LoginPage from "./pages/LoginPage";
-import SignInPage from "./pages/SignInPage";
 
+// Lazy-loaded pages (code splitting)
+const HomePage = lazy(() => import("./pages/HomePage"));
+const ProductPage = lazy(() => import("./pages/ProductPage"));
+const LoginPage = lazy(() => import("./pages/LoginPage"));
+const SignInPage = lazy(() => import("./pages/SignInPage"));
+const ProfilePage = lazy(() => import("./pages/ProfilePage"));
+const CartPage = lazy(() => import("./pages/CartPage"));
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MainLayout />}>
-          <Route index element={<HomePage />}></Route>
-          <Route path="/product/:id" element={<ProductPage />}></Route>
-          <Route path="/login" element={<LoginPage />}></Route>
-          <Route path="/signup" element={<SignInPage />}></Route>
-        </Route>
-      </Routes>
+      <Suspense
+        fallback={
+          <div className="h-screen flex items-center justify-center">
+            Loading...
+          </div>
+        }
+      >
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="product/:id" element={<ProductPage />} />
+            <Route path="login" element={<LoginPage />} />
+            <Route path="signup" element={<SignInPage />} />
+            <Route path="profile" element={<ProfilePage />} />
+            <Route path="cart" element={<CartPage />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 };

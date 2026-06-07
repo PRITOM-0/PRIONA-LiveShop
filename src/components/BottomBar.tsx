@@ -7,7 +7,7 @@ const BottomBar = () => {
 
   const items = [
     { label: "Home", icon: Home, path: "/" },
-    { label: "Shop", icon: ShoppingBag, path: "/product" },
+    { label: "Shop", icon: ShoppingBag, path: "/" },
     { label: "Cart", icon: ShoppingCart, path: "/cart" },
     { label: "Profile", icon: User, path: "/profile" },
   ];
