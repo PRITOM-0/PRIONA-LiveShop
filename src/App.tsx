@@ -11,6 +11,7 @@ const LoginPage = lazy(() => import("./pages/LoginPage"));
 const SignInPage = lazy(() => import("./pages/SignInPage"));
 const ProfilePage = lazy(() => import("./pages/ProfilePage"));
 const CartPage = lazy(() => import("./pages/CartPage"));
+const WishListPage = lazy(() => import("./pages/WishListPage"));
 const App = () => {
   return (
     <BrowserRouter>
@@ -29,6 +30,7 @@ const App = () => {
             <Route path="signup" element={<SignInPage />} />
             <Route path="profile" element={<ProfilePage />} />
             <Route path="cart" element={<CartPage />} />
+            <Route path="wishlist" element={<WishListPage />} />
           </Route>
         </Routes>
       </Suspense>

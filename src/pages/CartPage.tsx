@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { user } from "@/Data/User";
 import { allProducts } from "@/Data/data";
 import { ShoppingBag, ArrowLeft, Trash2 } from "lucide-react";
@@ -6,8 +6,7 @@ import { ShoppingBag, ArrowLeft, Trash2 } from "lucide-react";
 const CartPage = () => {
   const [cart, setCart] = useState(user.cart);
 
-  const getProduct = (id: number) =>
-    allProducts.find((p) => p.id === id);
+  const getProduct = (id: number) => allProducts.find((p) => p.id === id);
 
   const updateQty = (productId: number, type: "inc" | "dec") => {
     setCart((prev) =>
@@ -16,21 +15,15 @@ const CartPage = () => {
           ? {
               ...item,
               qty:
-                type === "inc"
-                  ? item.qty + 1
-                  : item.qty > 1
-                  ? item.qty - 1
-                  : 1,
+                type === "inc" ? item.qty + 1 : item.qty > 1 ? item.qty - 1 : 1,
             }
-          : item
-      )
+          : item,
+      ),
     );
   };
 
   const removeItem = (productId: number) => {
-    setCart((prev) =>
-      prev.filter((item) => item.productId !== productId)
-    );
+    setCart((prev) => prev.filter((item) => item.productId !== productId));
   };
 
   const subtotal = cart.reduce((total, item) => {
@@ -41,7 +34,6 @@ const CartPage = () => {
   return (
     <div className="min-h-screen   text-black antialiased">
       <div className="max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
-        
         {/* HEADER SECTION */}
         <div className="flex items-center justify-between border-b border-black pb-5 mb-8">
           <div className="flex items-center gap-3">
@@ -59,8 +51,12 @@ const CartPage = () => {
           /* EMPTY CART STATE */
           <div className="text-center py-20 bg-white border border-neutral-200">
             <ShoppingBag className="w-16 h-16 mx-auto text-neutral-300 stroke-[1.5] mb-4" />
-            <h2 className="text-xl font-medium tracking-tight mb-2">Your cart is empty</h2>
-            <p className="text-neutral-500 text-sm mb-6">Looks like you haven't added anything yet.</p>
+            <h2 className="text-xl font-medium tracking-tight mb-2">
+              Your cart is empty
+            </h2>
+            <p className="text-neutral-500 text-sm mb-6">
+              Looks like you haven't added anything yet.
+            </p>
             <button className="inline-flex items-center gap-2 bg-black text-white text-xs font-semibold tracking-widest uppercase px-6 py-3 hover:bg-red-500 transition-colors duration-300">
               <ArrowLeft size={14} /> Continue Shopping
             </button>
@@ -68,20 +64,26 @@ const CartPage = () => {
         ) : (
           /* MAIN CONTENT AREA */
           <div className="grid lg:grid-cols-3 gap-12 items-start">
-            
             {/* LEFT - CART ITEMS */}
             <div className="lg:col-span-2 space-y-4">
               {/* DESKTOP TABLE HEADER */}
-              <div className="hidden md:grid grid-cols-12 border-b border-neutral-200 pb-3 text-xs tracking-widest text-black font-black uppercase">
-                <span className="col-span-6">PRODUCT DETAILS</span>
-                <span className="col-span-2 text-center">PRICE</span>
-                <span className="col-span-2 text-center">QUANTITY</span>
-                <span className="col-span-1 text-right">TOTAL</span>
-                
+              <div className="grid grid-cols-12 border-b border-neutral-200 pb-3 text-[10px] md:text-xs tracking-tight md:tracking-widest text-black font-black uppercase">
+                <span className="col-span-5 md:col-span-6">
+                  PRODUCT DETAILS
+                </span>
+                <span className="col-span-2 md:col-span-2 text-center">
+                  PRICE
+                </span>
+                <span className="col-span-2 md:col-span-2 text-center">
+                  QUANTITY
+                </span>
+                <span className="col-span-2 md:col-span-1 text-center">
+                  TOTAL
+                </span>
               </div>
 
               {/* ITEMS CONTAINER */}
-              <div className="divide-y divide-red-500 bg-white border border-red-500 px-6">
+              <div className="divide-y divide-red-500 bg-white border border-red-500 px-3 md:px-6">
                 {cart.map((item) => {
                   const product = getProduct(item.productId);
                   if (!product) return null;
@@ -89,11 +91,11 @@ const CartPage = () => {
                   return (
                     <div
                       key={item.productId}
-                      className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center py-2 group"
+                      className="grid grid-cols-12 gap-2 md:gap-4 items-center py-2 group "
                     >
                       {/* PRODUCT INFO */}
-                      <div className="col-span-1 md:col-span-6 flex items-center gap-5">
-                        <div className="relative overflow-hidden border border-red-200 aspect-square w-16 h-16 flex-shrink-0 bg-neutral-100">
+                      <div className=" col-span-5 md:col-span-6 flex items-center gap-3 md:gap-5">
+                        <div className="relative overflow-hidden border border-red-200 aspect-square w-12 h-12 md:w-16 md:h-16 flex-shrink-0 bg-neutral-100">
                           <img
                             src={product.img}
                             alt={product.title}
@@ -101,10 +103,10 @@ const CartPage = () => {
                           />
                         </div>
                         <div className="space-y-1">
-                          <h2 className="font-bold text-base text-neutral-900 line-clamp-2 tracking-tight">
+                          <h2 className="font-bold text-[10px] md:text-xs text-base text-neutral-900 line-clamp-2 tracking-tight">
                             {product.title}
                           </h2>
-                          <div className="inline-flex gap-2 text-[11px] font-semibold tracking-wider uppercase text-neutral-500 bg-neutral-100 px-2 py-0.5 rounded">
+                          <div className="inline-flex gap-2 text-[8px] md:text-[10px] font-semibold tracking-wider uppercase text-neutral-500 bg-neutral-100 px-2 py-0.5 rounded">
                             <span>{item.selectedColor}</span>
                             <span className="text-neutral-300">|</span>
                             <span>{item.selectedSize}</span>
@@ -113,27 +115,27 @@ const CartPage = () => {
                       </div>
 
                       {/* PRICE */}
-                      <div className="col-span-1 md:col-span-2 flex md:justify-center justify-between items-center text-sm">
-                        <span className="md:hidden text-xs font-semibold text-neutral-400 uppercase">Price</span>
-                        <span className="font-medium">৳ {product.price.toLocaleString()}</span>
+                      <div className=" col-span-2 flex  justify-center items-center text-[10px] md:text-sm">
+                        <span className="font-bold">
+                          ৳ {product.price.toLocaleString()}
+                        </span>
                       </div>
 
                       {/* QUANTITY PICKER */}
-                      <div className="col-span-1 md:col-span-2 flex md:justify-center justify-between items-center">
-                        <span className="md:hidden text-xs font-semibold text-neutral-400 uppercase">Quantity</span>
+                      <div className=" col-span-2 flex  justify-center   items-center">
                         <div className="flex items-center border border-neutral-300 bg-white shadow-sm h-9">
                           <button
                             onClick={() => updateQty(item.productId, "dec")}
-                            className="w-8 h-full flex items-center justify-center text-neutral-500 hover:bg-neutral-100 hover:text-black transition-colors"
+                            className=" w-6 md:w-8 text-red-500 h-full flex items-center justify-center hover:bg-neutral-100 hover:text-black transition-colors"
                           >
                             -
                           </button>
-                          <span className="w-10 text-center text-xs font-bold font-mono">
+                          <span className="w-4 text-center text-[10px] md:text-xs font-bold font-mono">
                             {item.qty}
                           </span>
                           <button
                             onClick={() => updateQty(item.productId, "inc")}
-                            className="w-8 h-full flex items-center justify-center text-neutral-500 hover:bg-neutral-100 hover:text-black transition-colors"
+                            className="w-6 md:w-8 h-full flex items-center justify-center text-green-500 hover:bg-neutral-100 hover:text-black transition-colors"
                           >
                             +
                           </button>
@@ -141,15 +143,14 @@ const CartPage = () => {
                       </div>
 
                       {/* TOTAL + REMOVE */}
-                      <div className="col-span-1 md:col-span-2 flex md:justify-end justify-between items-center gap-6">
-                        <span className="md:hidden text-xs font-semibold text-neutral-400 uppercase">Total</span>
-                        <div className="flex items-center gap-4">
-                          <span className="font-bold text-sm text-neutral-900">
+                      <div className=" col-span-3 md:col-span-2 flex  justify-end   items-center gap-3">
+                        <div className="flex items-center gap-2">
+                          <span className="font-bold text-[10px] md:text-sm text-neutral-900">
                             ৳ {(product.price * item.qty).toLocaleString()}
                           </span>
                           <button
                             onClick={() => removeItem(item.productId)}
-                            className="p-1.5 text-neutral-400 hover:text-red-500 hover:bg-red-50 transition-colors duration-200 rounded"
+                            className="p-1.5 text-red-400 hover:text-red-500 hover:bg-red-50 transition-colors duration-200 rounded"
                             title="Remove item"
                           >
                             <Trash2 size={16} />
@@ -172,17 +173,21 @@ const CartPage = () => {
                 <div className="space-y-3 mt-5">
                   <div className="flex justify-between text-sm text-neutral-600">
                     <span>Subtotal</span>
-                    <span className="font-medium text-black">৳ {subtotal.toLocaleString()}</span>
+                    <span className="font-bold text-black">
+                      ৳ {subtotal.toLocaleString()}
+                    </span>
                   </div>
 
                   <div className="flex justify-between text-sm text-neutral-600">
                     <span>Shipping Fee</span>
-                    <span className="font-medium text-black">৳ 60</span>
+                    <span className="font-bold text-black">৳ 60</span>
                   </div>
                 </div>
 
                 <div className="flex justify-between items-baseline mt-6 pt-4 border-t-2 border-dashed border-neutral-200">
-                  <span className="text-sm font-bold uppercase tracking-wider">Estimated Total</span>
+                  <span className="text-sm font-bold uppercase tracking-wider">
+                    Estimated Total
+                  </span>
                   <span className="text-2xl font-black font-mono">
                     ৳ {(subtotal + 60).toLocaleString()}
                   </span>
@@ -191,7 +196,7 @@ const CartPage = () => {
                 <button className="w-full mt-8 bg-red-500 text-white py-4 font-bold tracking-widest text-xs uppercase shadow-md hover:bg-black transition-all duration-300 transform active:translate-y-0.5">
                   PROCEED TO CHECKOUT
                 </button>
-                
+
                 <div className="mt-4 text-center">
                   <p className="text-[11px] text-neutral-400 tracking-wide">
                     Tax calculated at checkout • Secure Transaction
@@ -199,7 +204,6 @@ const CartPage = () => {
                 </div>
               </div>
             </div>
-
           </div>
         )}
       </div>

@@ -14,7 +14,9 @@ const Footer = () => {
       <div className="w-full md:w-[80%] mx-auto my-10 flex flex-wrap justify-between gap-y-5">
         
         <div className="w-full md:w-1/5 pl-10 md:pl-0 flex flex-col gap-y-3">
-          <h1 className="text-3xl md:text-3xl font-bold">PRIONA</h1>
+          <h1 className="text-3xl md:text-3xl font-medium tracking-tight uppercase font-monospace">
+            PRIONA
+          </h1>
           <p>Subscribe</p>
           <p className="text-[10px] sm:text-md md:text-[8px] lg:text-[8px] xl:text-[10px]">
             Get 10% off your first order

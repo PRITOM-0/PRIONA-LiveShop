@@ -7,10 +7,10 @@ const Navbar = () => {
   return (
     <>
       <div className="w-full md:px-40 bg-white h-16 shadow-md md:h-12 lg:h-14 mx-auto flex justify-between items-center text-black font-secondary">
-        <div className=" w-[45%] md:w-[25%] h-full pl-2 flex justify-around md:justify-start text-3xl sm:text-md md:text-4xl font-bold items-center gap-2">
+        <div className=" w-[50%] md:w-[25%] h-full pl-2 flex justify-center md:justify-start text-3xl sm:text-md md:text-4xl font-bold items-center gap-3">
            <SidebarTrigger className="md:hidden"/>
        
-          <Link to="/" className="text-2xl font-bold">
+          <Link to="/" className="text-3xl font-normal tracking-tight uppercase font-monospace">
             PRIONA
           </Link>
         </div>
@@ -49,7 +49,7 @@ const Navbar = () => {
         </div>
         <div className=" w-[50%] md:w-[15%] h-full flex items-center justify-end pr-5 md:pr-2">
           <div className="flex gap-x-3 md:gap-x-4 items-center">
-            <Link to="/cart" className="relative">
+            <Link to="/wishlist" className="relative">
               <Heart className="w-6 h-6" />
               <div className="absolute -top-2 -right-3 p-0.5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">10</div>
             </Link>

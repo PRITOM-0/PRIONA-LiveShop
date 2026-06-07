@@ -11,15 +11,15 @@ const SignInPage = () => {
     <div className="relative flex items-center justify-center px-4 py-5  overflow-hidden">
       
       {/* Smart Background Glow Effect */}
-      <div className="absolute top-1/4 right-1/4 w-[350px] h-[350px] bg-red-500/10 rounded-full blur-[80px] pointer-events-none" />
-      <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[280px] h-[280px] bg-red-400/20 rounded-full blur-[70px] pointer-events-none" />
+      <div className="absolute top-1/4 right-1/4 w-[350px] h-[350px] bg-red-500/10   blur-[80px] pointer-events-none" />
+      <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[280px] h-[280px] bg-red-400/20  blur-[70px] pointer-events-none" />
 
       {/* Glass Card Container */}
-      <div className="w-full max-w-md bg-white/40 backdrop-blur-xl border border-red-100 shadow-[0_8px_32px_0_rgba(239,68,68,0.08)] rounded-2xl p-8 relative z-10 transition-all duration-300 hover:shadow-[0_8px_32px_0_rgba(239,68,68,0.15)]">
+      <div className="w-full max-w-md bg-white border-2 border-black p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]   p-8 relative z-10  ">
         
         {/* Header Section */}
         <div className="text-center space-y-2">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-red-500 text-white shadow-lg shadow-red-500/30 mb-2">
+          <div className="inline-flex items-center justify-center w-12 h-12  bg-red-500 text-white shadow-lg shadow-red-500/30 mb-2">
             <Sparkles size={22} />
           </div>
           <h2 className="text-3xl font-extrabold tracking-tight text-black">
@@ -46,7 +46,7 @@ const SignInPage = () => {
               <input
                 type="text"
                 placeholder="John Doe"
-                className="w-full pl-11 pr-4 py-2.5 bg-white/80 border border-red-200 rounded-xl text-sm text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 shadow-sm transition-all duration-200"
+                className="w-full pl-11 pr-4 py-2.5 bg-white/80 border border-red-200  text-sm text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 shadow-sm transition-all duration-200"
               />
             </div>
           </div>
@@ -64,7 +64,7 @@ const SignInPage = () => {
               <input
                 type="email"
                 placeholder="name@example.com"
-                className="w-full pl-11 pr-4 py-2.5 bg-white/80 border border-red-200 rounded-xl text-sm text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 shadow-sm transition-all duration-200"
+                className="w-full pl-11 pr-4 py-2.5 bg-white/80 border border-red-200   text-sm text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 shadow-sm transition-all duration-200"
               />
             </div>
           </div>
@@ -82,7 +82,7 @@ const SignInPage = () => {
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="••••••••"
-                className="w-full pl-11 pr-11 py-2.5 bg-white/80 border border-red-200 rounded-xl text-sm text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 shadow-sm transition-all duration-200"
+                className="w-full pl-11 pr-11 py-2.5 bg-white/80 border border-red-200   text-sm text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 shadow-sm transition-all duration-200"
               />
               <button
                 type="button"
@@ -107,7 +107,7 @@ const SignInPage = () => {
               <input
                 type={showConfirmPassword ? "text" : "password"}
                 placeholder="••••••••"
-                className="w-full pl-11 pr-11 py-2.5 bg-white/80 border border-red-200 rounded-xl text-sm text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 shadow-sm transition-all duration-200"
+                className="w-full pl-11 pr-11 py-2.5 bg-white/80 border border-red-200   text-sm text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 shadow-sm transition-all duration-200"
               />
               <button
                 type="button"
@@ -124,7 +124,7 @@ const SignInPage = () => {
             <label className="flex items-start gap-2.5 cursor-pointer text-xs text-neutral-700 font-medium select-none group">
               <input 
                 type="checkbox" 
-                className="mt-0.5 w-4 h-4 rounded text-red-500 border-red-200 focus:ring-red-500 accent-red-500 transition-all cursor-pointer" 
+                className="mt-0.5 w-4 h-4   text-red-500 border-red-200 focus:ring-red-500 accent-red-500 transition-all cursor-pointer" 
               />
               <span className="group-hover:text-black transition-colors leading-normal">
                 I agree to the <span className="text-red-500 font-semibold hover:underline underline-offset-2">Terms & Conditions</span> and <span className="text-red-500 font-semibold hover:underline underline-offset-2">Privacy Policy</span>
@@ -135,7 +135,7 @@ const SignInPage = () => {
           {/* Primary Sign Up Button */}
           <button
             type="submit"
-            className="w-full mt-3 bg-red-500 hover:bg-black text-white py-3 rounded-xl font-semibold shadow-lg shadow-red-500/20 hover:shadow-black/10 flex items-center justify-center gap-2 group transition-all duration-300 active:scale-[0.98]"
+            className="w-full mt-3 bg-red-500 hover:bg-black text-white py-3  font-semibold shadow-lg shadow-red-500/20 hover:shadow-black/10 flex items-center justify-center gap-2 group transition-all duration-300 active:scale-[0.98]"
           >
             Get Started
           </button>
@@ -150,7 +150,7 @@ const SignInPage = () => {
           {/* Premium Google Button */}
           <button
             type="button"
-            className="w-full flex items-center justify-center gap-2.5 border border-red-200 bg-white/60 hover:bg-red-500 text-sm text-black hover:text-white font-medium py-2.5 rounded-xl transition-all duration-300 active:scale-[0.98] group"
+            className="w-full flex items-center justify-center gap-2.5 border border-red-200 bg-white/60 hover:bg-red-500 text-sm text-black hover:text-white font-medium py-2.5   transition-all duration-300 active:scale-[0.98] group"
           >
           <FaGoogle />
             Sign up with Google
