@@ -3,20 +3,18 @@ import { User, Mail, Lock, Eye, EyeOff, Sparkles } from "lucide-react";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const SignInPage = () => {
+const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   return (
     <div className="relative flex items-center justify-center px-4 py-5  overflow-hidden">
-      
       {/* Smart Background Glow Effect */}
       <div className="absolute top-1/4 right-1/4 w-[350px] h-[350px] bg-red-500/10   blur-[80px] pointer-events-none" />
       <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[280px] h-[280px] bg-red-400/20  blur-[70px] pointer-events-none" />
 
       {/* Glass Card Container */}
       <div className="w-full max-w-md bg-white border-2 border-black p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]   p-8 relative z-10  ">
-        
         {/* Header Section */}
         <div className="text-center space-y-2">
           <div className="inline-flex items-center justify-center w-12 h-12  bg-red-500 text-white shadow-lg shadow-red-500/30 mb-2">
@@ -26,13 +24,15 @@ const SignInPage = () => {
             Create Account
           </h2>
           <p className="text-sm font-medium text-neutral-600">
-            Sign up to get started with <span className="text-red-500 font-semibold tracking-wide">PRIONA</span>
+            Sign up to get started with{" "}
+            <span className="text-red-500 font-semibold tracking-wide">
+              PRIONA
+            </span>
           </p>
         </div>
 
         {/* Form */}
         <form className="mt-8 space-y-4" onSubmit={(e) => e.preventDefault()}>
-          
           {/* Name Input */}
           <div className="space-y-1.5">
             <label className="text-xs font-semibold text-neutral-700 tracking-wider uppercase pl-1">
@@ -122,12 +122,19 @@ const SignInPage = () => {
           {/* Terms and Conditions */}
           <div className="pt-1">
             <label className="flex items-start gap-2.5 cursor-pointer text-xs text-neutral-700 font-medium select-none group">
-              <input 
-                type="checkbox" 
-                className="mt-0.5 w-4 h-4   text-red-500 border-red-200 focus:ring-red-500 accent-red-500 transition-all cursor-pointer" 
+              <input
+                type="checkbox"
+                className="mt-0.5 w-4 h-4   text-red-500 border-red-200 focus:ring-red-500 accent-red-500 transition-all cursor-pointer"
               />
               <span className="group-hover:text-black transition-colors leading-normal">
-                I agree to the <span className="text-red-500 font-semibold hover:underline underline-offset-2">Terms & Conditions</span> and <span className="text-red-500 font-semibold hover:underline underline-offset-2">Privacy Policy</span>
+                I agree to the{" "}
+                <span className="text-red-500 font-semibold hover:underline underline-offset-2">
+                  Terms & Conditions
+                </span>{" "}
+                and{" "}
+                <span className="text-red-500 font-semibold hover:underline underline-offset-2">
+                  Privacy Policy
+                </span>
               </span>
             </label>
           </div>
@@ -143,7 +150,9 @@ const SignInPage = () => {
           {/* Styled Separator */}
           <div className="flex items-center gap-3 py-1">
             <div className="flex-1 h-px bg-gradient-to-r from-transparent to-red-200" />
-            <span className="text-xs font-bold text-neutral-400 tracking-widest">OR</span>
+            <span className="text-xs font-bold text-neutral-400 tracking-widest">
+              OR
+            </span>
             <div className="flex-1 h-px bg-gradient-to-l from-transparent to-red-200" />
           </div>
 
@@ -152,7 +161,7 @@ const SignInPage = () => {
             type="button"
             className="w-full flex items-center justify-center gap-2.5 border border-red-200 bg-white/60 hover:bg-red-500 text-sm text-black hover:text-white font-medium py-2.5   transition-all duration-300 active:scale-[0.98] group"
           >
-          <FaGoogle />
+            <FaGoogle />
             Sign up with Google
           </button>
         </form>
@@ -161,15 +170,17 @@ const SignInPage = () => {
         <p className="text-center text-sm text-neutral-600 mt-6 font-medium">
           Already have an account?{" "}
           <Link to="/login">
-            <button type="button" className="text-red-500 font-semibold hover:text-black hover:underline underline-offset-4 transition-colors">
+            <button
+              type="button"
+              className="text-red-500 font-semibold hover:text-black hover:underline underline-offset-4 transition-colors"
+            >
               Login
             </button>
           </Link>
         </p>
-
       </div>
     </div>
   );
 };
 
-export default SignInPage;
+export default SignUpPage;

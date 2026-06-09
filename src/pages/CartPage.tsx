@@ -2,6 +2,7 @@ import { useState } from "react";
 import { user } from "@/Data/User";
 import { allProducts } from "@/Data/data";
 import { ShoppingBag, ArrowLeft, Trash2 } from "lucide-react";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const CartPage = () => {
   const [cart, setCart] = useState(user.cart);
@@ -33,6 +34,7 @@ const CartPage = () => {
 
   return (
     <div className="min-h-screen   text-black antialiased">
+      <Breadcrumb />
       <div className="max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
         {/* HEADER SECTION */}
         <div className="flex items-center justify-between border-b border-black pb-5 mb-8">

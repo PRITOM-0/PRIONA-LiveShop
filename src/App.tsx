@@ -8,10 +8,14 @@ import MainLayout from "./layout/MainLayout";
 const HomePage = lazy(() => import("./pages/HomePage"));
 const ProductPage = lazy(() => import("./pages/ProductPage"));
 const LoginPage = lazy(() => import("./pages/LoginPage"));
-const SignInPage = lazy(() => import("./pages/SignInPage"));
+const SignUpPage = lazy(() => import("./pages/SignUpPage"));
 const ProfilePage = lazy(() => import("./pages/ProfilePage"));
 const CartPage = lazy(() => import("./pages/CartPage"));
 const WishListPage = lazy(() => import("./pages/WishListPage"));
+const ShopPage = lazy(() => import("./pages/ShopPage"));
+
+
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -27,10 +31,11 @@ const App = () => {
             <Route index element={<HomePage />} />
             <Route path="product/:id" element={<ProductPage />} />
             <Route path="login" element={<LoginPage />} />
-            <Route path="signup" element={<SignInPage />} />
+            <Route path="signup" element={<SignUpPage />} />
             <Route path="profile" element={<ProfilePage />} />
             <Route path="cart" element={<CartPage />} />
             <Route path="wishlist" element={<WishListPage />} />
+            <Route path="shop" element={<ShopPage />} />
           </Route>
         </Routes>
       </Suspense>

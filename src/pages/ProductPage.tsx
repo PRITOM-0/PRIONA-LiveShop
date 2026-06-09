@@ -3,6 +3,9 @@ import { Star, Heart, ShoppingCart } from "lucide-react";
 import { useParams } from "react-router-dom";
 import { allProducts } from "@/Data/data";
 import RelatedProducts from "@/components/RelatedProducts";
+
+import Breadcrumb from "@/components/Breadcrumb";
+
 const ProductPage = () => {
   const { id } = useParams();
   const product = allProducts.find((p) => p.id === parseInt(id!));
@@ -19,6 +22,7 @@ const ProductPage = () => {
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-6">
+      <Breadcrumb />
       {/* MAIN GRID */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
         
