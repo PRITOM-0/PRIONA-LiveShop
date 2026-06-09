@@ -1,5 +1,7 @@
  
+ 
 import { user } from "@/Data/User";
+import { Link } from "react-router-dom";
 import {
   Mail,
   Phone,
@@ -16,6 +18,7 @@ import {
 const ProfilePage = () => {
   return (
     <div className="min-h-screen bg-neutral-50 text-black antialiased p-6 sm:p-10 mt-5">
+     
       <div className="max-w-5xl mx-auto space-y-8">
 
         {/* HEADER / PROFILE CARD */}
@@ -75,7 +78,7 @@ const ProfilePage = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
           {/* Wishlist */}
-          <div className="bg-white border border-neutral-200 p-5 flex items-center gap-4 group hover:border-black transition-colors duration-200">
+          <Link to="/wishlist" className="bg-white border-2 border-black p-5 flex items-center gap-4 group hover:border-red-400 transition-colors duration-200 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             <div className="p-3 bg-neutral-100 group-hover:bg-red-50 transition-colors">
               <Heart className="text-neutral-900 group-hover:text-red-500 group-hover:fill-red-500 transition-colors" size={20} />
             </div>
@@ -83,10 +86,10 @@ const ProfilePage = () => {
               <p className="text-xs font-bold tracking-wider uppercase text-neutral-400">Wishlist</p>
               <h3 className="text-xl font-black mt-0.5 font-mono">{user.wishlist.length} <span className="text-xs font-normal text-neutral-500 uppercase">Items</span></h3>
             </div>
-          </div>
+          </Link>
 
           {/* Cart */}
-          <div className="bg-white border border-neutral-200 p-5 flex items-center gap-4 group hover:border-black transition-colors duration-200">
+          <Link to="/cart" className="bg-white border-2 border-black p-5 flex items-center gap-4 group hover:border-red-400 transition-colors duration-200 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             <div className="p-3 bg-neutral-100 group-hover:bg-red-50 transition-colors">
               <ShoppingCart className="text-neutral-900 group-hover:text-red-500 transition-colors" size={20} />
             </div>
@@ -94,10 +97,10 @@ const ProfilePage = () => {
               <p className="text-xs font-bold tracking-wider uppercase text-neutral-400">Active Cart</p>
               <h3 className="text-xl font-black mt-0.5 font-mono">{user.cart.length} <span className="text-xs font-normal text-neutral-500 uppercase">Items</span></h3>
             </div>
-          </div>
+          </Link>
 
           {/* Orders */}
-          <div className="bg-white border border-neutral-200 p-5 flex items-center gap-4 group hover:border-black transition-colors duration-200">
+          <Link to="/orders" className="bg-white border-2 border-black p-5 flex items-center gap-4 group hover:border-red-400 transition-colors duration-200 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             <div className="p-3 bg-neutral-100 group-hover:bg-red-50 transition-colors">
               <Package className="text-neutral-900 group-hover:text-red-500 transition-colors" size={20} />
             </div>
@@ -105,7 +108,7 @@ const ProfilePage = () => {
               <p className="text-xs font-bold tracking-wider uppercase text-neutral-400">Total Orders</p>
               <h3 className="text-xl font-black mt-0.5 font-mono">{user.orders.length} <span className="text-xs font-normal text-neutral-500 uppercase">Placed</span></h3>
             </div>
-          </div>
+          </Link>
 
         </div>
 

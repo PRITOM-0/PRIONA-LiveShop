@@ -2,6 +2,7 @@ import { useState } from "react";
 import { user } from "@/Data/User";
 import { allProducts } from "@/Data/data";
 import { Heart, ShoppingCart, Trash2 } from "lucide-react";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const WishlistPage = () => {
   const [wishlist, setWishlist] = useState(user.wishlist);
@@ -23,6 +24,8 @@ const WishlistPage = () => {
 
   return (
     <div className="min-h-screen text-black antialiased">
+        <Breadcrumb />
+        
       <div className="max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
 
         {/* HEADER */}

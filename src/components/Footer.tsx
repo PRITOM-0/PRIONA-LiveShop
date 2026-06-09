@@ -75,16 +75,17 @@ const Footer = () => {
           <p className="text-[8px]  md:text-[10px]">
             save 300 Tk with App New User Only
           </p>
-          <div className="flex w-[80%]">
-            <div className="w-[50%] border border-white/20 p-2 px-1 flex items-center justify-center">
-              QR Code
+          <div className="flex w-[80%] h-25">
+            <div className="w-[50%] border-white/20 p-2 px-1 flex items-center justify-center">
+             <img src="public\images\QR.png" alt="qr code" className="h-full"/> 
+
             </div>
-            <div>
-              <div className="w-full border py-2 border-white/20 flex items-center justify-center">
-                google play
+            <div className="w-[50%] flex flex-col gap-y-2">
+              <div className="w-full flex items-center justify-center">
+               <img src="https://hf-files-oregon.s3.amazonaws.com/hdpconcord_kb_attachments/2020/09-18/9501d8c2-babe-4f54-8df8-92692dfbc657/google-play-badge.png" alt="playstore" className="w-full"/>
               </div>
-              <div className="w-full border py-2 px-1 border-white/20 flex items-center justify-center">
-                App Store
+              <div className="w-full  flex items-center justify-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/3840px-Download_on_the_App_Store_Badge.svg.png" alt="appstore" className="w-full px-2"/>
               </div>
             </div>
           </div>

@@ -13,7 +13,7 @@ import {
   User,
   Settings,
   LogOut,
-  Phone,
+  ShoppingBag,
   Info,
   UserPlus,
 } from "lucide-react";
@@ -41,10 +41,10 @@ export function AppSidebar() {
             </Link>
 
             <Link
-              to="/contact"
+              to="/shop"
               className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-black hover:bg-red-50 transition"
             >
-              <Phone size={18} /> Contact
+              <ShoppingBag size={18} /> Shop
             </Link>
 
             <Link
@@ -55,10 +55,10 @@ export function AppSidebar() {
             </Link>
 
             <Link
-              to="/signin"
+              to="/signup"
               className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-black hover:bg-red-50 transition"
             >
-              <UserPlus size={18} /> Sign In
+              <UserPlus size={18} /> Sign Up
             </Link>
             <Link
               to="/login"

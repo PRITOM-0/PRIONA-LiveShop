@@ -1,11 +1,11 @@
 
 import { Search } from "lucide-react";
 
-const SearchBar = () => {
+const SearchBar = ({ className = "" }) => {
   return (
-    <div className="w-full flex justify-center md:hidden mt-5">
+    <div className={`mx-auto flex justify-center mt-5 ${className}`}>
       
-      <div className="w-[90%] flex items-center bg-white shadow-md border rounded-xs overflow-hidden">
+      <div className="w-[90%] flex items-center bg-white shadow-md border border-red-500 rounded-xs overflow-hidden">
 
         {/* Input */}
         <input
