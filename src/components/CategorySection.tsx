@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -7,12 +6,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
- 
+
+import { useNavigate } from "react-router-dom";
 
 // ✅ Category Data
- import {categories} from "@/Data/data"
+import { categories } from "@/Data/data";
 
 const CategorySection = () => {
+  const navigate = useNavigate();
   return (
     <section className="w-full py-5">
       <div className="w-full mx-auto overflow-hidden">
@@ -28,6 +29,11 @@ const CategorySection = () => {
               return (
                 <CarouselItem
                   key={index}
+                  onClick={() =>
+                    navigate(
+                      `/shop?category=${encodeURIComponent(cat.title.toLowerCase())}`,
+                    )
+                  }
                   className="
                     pl-2 
                     basis-1/4      

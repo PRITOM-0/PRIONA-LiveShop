@@ -89,6 +89,25 @@ export function AppSidebar() {
             </Link>
           </div>
         </SidebarGroup>
+        <SidebarGroup>
+          <p className="px-3 mt-4 mb-2 text-xs text-gray-400 uppercase">Admin</p>
+
+          <div className="flex flex-col gap-2 px-2">
+            <Link
+              to="/cart"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-black hover:bg-red-50 transition"
+            >
+              <ShoppingCart size={18} /> Cart
+            </Link>
+
+            <Link
+              to="/wishlist"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-black hover:bg-red-50 transition"
+            >
+              <Heart size={18} /> Wishlist
+            </Link>
+          </div>
+        </SidebarGroup>
       </SidebarContent>
 
       {/* Footer */}

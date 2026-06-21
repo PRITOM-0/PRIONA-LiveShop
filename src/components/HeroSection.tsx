@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
@@ -7,10 +8,11 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import {slides} from "@/Data/data"
-import {categories} from "@/Data/data"
+import { slides } from "@/Data/data";
+import { categories } from "@/Data/data";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const plugin = React.useRef(
     Autoplay({
       delay: 2000,
@@ -29,9 +31,14 @@ const HeroSection = () => {
               {categories.map((cat, i) => (
                 <li
                   key={i}
+                  onClick={() =>
+                    navigate(
+                      `/shop?category=${encodeURIComponent(cat.title.toLowerCase())}`,
+                    )
+                  }
                   className="text-gray-600 hover:text-black cursor-pointer transition flex gap-2"
                 >
-                 <cat.icon size={20} className="text-red-500"/> {cat.title}
+                  <cat.icon size={20} className="text-red-500" /> {cat.title}
                 </li>
               ))}
             </ul>
@@ -55,7 +62,7 @@ const HeroSection = () => {
                   <CarouselItem key={slide.id}>
                     <div className="relative h-48 md:h-96">
                       <img
-                      loading="lazy"
+                        loading="lazy"
                         src={`${slide.image}?w=300&h=300&fit=crop&auto=format&q=60`}
                         alt={slide.title}
                         className="w-full h-full object-cover"
